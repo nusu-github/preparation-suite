@@ -1,12 +1,16 @@
 # Model
-models/*
+/models/*
+!/models/.gitkeep
 
 # data
-data/*
-datasets/*
+/data/*
+!/data/.gitkeep
+/datasets/*
+!/datasets/.gitkeep
 
-test/*
-
+# notebooks
+/test/*
+!/test/.gitkeep
 
 # Created by https://www.toptal.com/developers/gitignore/api/python,pycharm,visualstudiocode
 # Edit at https://www.toptal.com/developers/gitignore?templates=python,pycharm,visualstudiocode
