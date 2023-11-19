@@ -1,0 +1,93 @@
+[project]
+name = "preparation-suite"
+version = "0.1.0"
+description = "Data preparation suite"
+readme = "README.md"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Operating System :: OS Independent",
+]
+dependencies = [
+    "fiftyone",
+    "joblib",
+    "numpy",
+    "opencv-python-contrib-headless",
+    "pillow",
+    "tqdm",
+    "xxhash"
+]
+
+
+[project.optional-dependencies]
+dev = [
+    "black",
+    "ruff",
+]
+torch = [
+    "torch",
+    "torchvision",
+]
+huggingface = [
+    "huggingface_hub",
+    "transformers[accelerate,ftfy,timm]",
+    "optimum",
+    "datasets"
+]
+onnx_runtime = [
+    "onnx",
+    "onnxruntime-gpu",
+]
+yolo = [
+    "ultralytics",
+    "supervision",
+]
+sam = [
+    "segment-anything-hq",
+    "supervision"
+]
+dino = [
+    "groundingdino",
+    "supervision"
+]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+#
+# Configs
+#
+[tool.ruff]
+target-version = "py310"
+line-length = 120
+
+[tool.ruff.lint]
+select = [
+    "ALL"
+]
+ignore = [
+    "G004",
+    "PD901",
+    "RUF001",
+    "RUF002",
+    "RUF003",
+    "ANN101",
+    "ANN102",
+    "ANN002",
+    "ANN003",
+    "ERA",
+]
+
+[tool.ruff.lint.pylint]
+max-args = 10
+
+[tool.ruff.lint.pydocstyle]
+convention = "numpy"
+
+[tool.ruff.lint.pyupgrade]
+keep-runtime-typing = true
+
+[tool.black]
+target-version = ["py39", "py310", "py311"]
+line-length = 120
